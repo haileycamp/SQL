@@ -1,0 +1,107 @@
+# In this project, I created my own table with a small set of famous singers, and included their first and last name and date of birth. I then created 2 more tables with songs the artist wrote and their hometown. 
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, birthday INTEGER);
+
+INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Taylor", "Swift", "12-13-1989");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Ariana", "Grande", "6-23-1993");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Rihanna", "Fenty", "2-20-1988");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Selena", "Gomez", "7-22-1992");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Billie", "Eilish", "12-18-2001");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Olivia", "Rodrigo", "2-20-2003");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Harry", "Styles", "2-1-1994");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Ed", "Sheeran", "2-17-1991");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Adele", "Adkins", "5-5-1988");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Jhene", "Aiko", "3-16-1988");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Beyonce", "Knowles", "9-4-1981");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Kanye", "West", "6-8-1977");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Katy", "Perry", "10-25-1984");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Carrie", "Underwood", "3-10-1983");
+    INSERT INTO famous_people (first_name, last_name, birthday)
+    VALUES ("Miley", "Cyrus", "11-23-1992");
+    
+    CREATE TABLE songs (id INTEGER PRIMARY KEY, artist_id INTEGER, song TEXT);
+    INSERT INTO songs (artist_id, song)
+    VALUES ("1", "august");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("2", "positions");
+     INSERT INTO songs (artist_id, song)
+    VALUES ("3", "pour it up");
+     INSERT INTO songs (artist_id, song)
+    VALUES ("4", "bad liar");
+     INSERT INTO songs (artist_id, song)
+    VALUES ("5", "happier than ever");
+     INSERT INTO songs (artist_id, song)
+    VALUES ("6", "deja vu");
+     INSERT INTO songs (artist_id, song)
+    VALUES ("7", "as it was");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("8", "shape of you");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("9", "woman like me");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("10", "while were young");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("11", "crazy in love");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("12", "stronger");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("13", "teenage dream");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("14", "before he cheats");
+    INSERT INTO songs (artist_id, song)
+    VALUES ("15", "malibu");
+    
+    
+    CREATE TABLE hometown (id INTEGER PRIMARY KEY, artist_id INTEGER, hometown TEXT);
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("1", "Reading PA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("2", "Boca Raton FL");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("3", "Saint Michael BA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("4", "Grand Prairie TX");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("5", "Los Angeles CA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("6", "Temecula CA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("7", "Redditch UK");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("8", "Halifax UK");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("9", "Tottenham UK");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("10", "Los Angeles CA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("11", "Houston TX");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("12", "Atlanta GA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("13", "Santa Barbara CA");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("14", "Muskogee OK");
+    INSERT INTO hometown (artist_id, hometown)
+    VALUES ("15", "Franklin TN");
+
+# I then joined these tables to create readable lists. 
+
+SELECT first_name, last_name, song, hometown FROM famous_people
+    JOIN songs
+    ON famous_people.id = songs.artist_id
+    JOIN hometown
+    ON famous_people.id = hometown.artist_id;
