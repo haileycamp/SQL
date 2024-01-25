@@ -1,6 +1,6 @@
 # In this SQL, I am querying a database with several tables in it to quantify statistics about order and customer data.
 
-# 1. How many orders where placed in January?
+#1. How many orders where placed in January?
 SELECT COUNT(orderID) FROM BIT_DB.jansales
 WHERE length(orderID) = 6
 
@@ -35,3 +35,10 @@ LEFT JOIN BIT_DB.customers cust
 ON Feb.orderid=cust.order_id
 WHERE Feb.quantity > 2
 AND LENGTH(orderid) = 6
+
+#8. List all the products sold in Los Angeles in February, and include how many were sold.
+SELECT product, SUM(quantity)
+FROM BIT_DB.FebSales 
+WHERE location like '%Los Angeles%'
+GROUP BY product
+
