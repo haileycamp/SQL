@@ -23,7 +23,7 @@ tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL )
 
-# Then, I inserted the Spotify Data .csv into the table. 
+# Then I inserted the Spotify Data .csv into the table. 
 
 # Next, I analyzed the data using several SQL queries. 
 
@@ -34,20 +34,20 @@ ORDER BY popularity DESC
 LIMIT 10
 
 # 2. What artist released the longest song?
-SELECT *
+SELECT artist_name, track_name, duration_ms
 FROM BIT_DB.Spotifydata
 ORDER BY duration_ms DESC
 LIMIT 1
 
 # 3. What is the average loudness by artist and track?
-SELECT artist_name, AVG(loudness) AS avg_loudness
+SELECT artist_name, track_name, AVG(loudness) 
 FROM BIT_DB.Spotifydata
-GROUP BY artist_name
+GROUP BY artist_name, track_name
 
 # 4. What is the average dancability for the 10 most popular songs?
 SELECT AVG(danceability), track_name, artist_name
 FROM BIT_DB.Spotifydata
-GROUP BY track_name, artist_name
+GROUP BY track_name, artist_nameI
 ORDER BY popularity DESC
 LIMIT 10
 
