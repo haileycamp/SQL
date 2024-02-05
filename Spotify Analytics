@@ -25,7 +25,7 @@ time_signature integer NOT NULL )
 
 # Then I inserted the Spotify Data .csv into the table. 
 
-# Next, I analyzed the data using several SQL queries. 
+# Next, I created questions based on the data in the table and answered the questions using SQL queries. 
 
 # 1. Who are the top 10 artists by popularity?
 SELECT popularity, artist_name 
